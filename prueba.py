@@ -27,16 +27,16 @@
 # # ademas pida el pin que debe ser 3435
 # # los dos deben estar correctos para acceder al sistema
 
-# passw="temu"
-# pin=3435
+passw="temu"
+pin=3435
 
-# palabra=input("Ingrese la palabra secreta: ")
-# code=int(input("Ingrese el pin de 4 digitos: "))
+palabra=input("Ingrese la palabra secreta: ")
+code=int(input("Ingrese el pin de 4 digitos: "))
 
-# if code==pin and passw==palabra:
-#     print("Acceso concedido")
-# else:
-#     print("Algo salio mal")
+if code==pin and passw==palabra:
+    print("Acceso concedido")
+else:
+    print("Algo salio mal")
 
 ingreso=int(input("Ingrese su sueldo: "))
 

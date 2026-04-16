@@ -6,6 +6,14 @@
 # # Pedir un numero al usuario }
 # # mostrar un saludo esa cantidad de veces
 
+
+
+
+
+
+
+
+
 # num=int(input("Ingrese un numero: "))
 # for i in range(num):
 #     print(i+1,"Hola mariano")
@@ -40,18 +48,18 @@
 # # calcular el promedio de todas las notas
 # # mostrar si aprueba o no
 
-# notas=int(input("Ingrese la cant de notas: "))
-# suma=0
-# for i in range(notas):
-#     n=float(input("Ingrese la nota: "))
-#     suma=suma+n
-# prom=suma/notas
-# print("El promedio es", prom)
+notas=int(input("Ingrese la cant de notas: "))
+suma=0
+for i in range(notas):
+    n=float(input(f"Ingrese la nota {i+1}: "))
+    suma=suma+n
+prom=suma/notas
+print("El promedio es",round(prom, 1) )
 
-# if prom>=4:
-#     print("ALumno aprobado")
-# else:
-#     print("ALumno reprobado")
+if prom>=4:
+    print("ALumno aprobado")
+else:
+    print("ALumno reprobado")
 
 
 # # cuenta la cantidad de vocales
@@ -78,21 +86,21 @@
 # apribado sy reprobados.
 
 
-num=int(input("Ingrese la cant de alumnos: "))
-apro=0
-repro=0
-for i in range(num):
-    notas=int(input(f"Ingrese la cant de notas del alumno {i+1}: "))
-    suma=0
-    for j in range(notas):
-        n=float(input(f"Ingrese la nota  {j+1}: "))
-        suma=suma+n
-    prom=suma/notas
-    print("El promedio es", prom)
+# num=int(input("Ingrese la cant de alumnos: "))
+# apro=0
+# repro=0
+# for i in range(num):
+#     notas=int(input(f"Ingrese la cant de notas del alumno {i+1}: "))
+#     suma=0
+#     for j in range(notas):
+#         n=float(input(f"Ingrese la nota  {j+1}: "))
+#         suma=suma+n
+#     prom=suma/notas
+#     print("El promedio es", prom)
 
-    if prom>=4:
-        print("ALumno aprobado")
-        apro+=1
-    else:
-        print("ALumno reprobado")
-        repro+=1
+#     if prom>=4:
+#         print("ALumno aprobado")
+#         apro+=1
+#     else:
+#         print("ALumno reprobado")
+#         repro+=1
