@@ -8,12 +8,6 @@
 
 
 
-
-
-
-
-
-
 # num=int(input("Ingrese un numero: "))
 # for i in range(num):
 #     print(i+1,"Hola mariano")
@@ -44,25 +38,25 @@
 # print("El resultado de la suma es", suma )
 
 # # Pedir la cantidad de notas al usuario 
-# # luego pedir cada noa individualmente
+# # luego pedir cada nota individualmente
 # # calcular el promedio de todas las notas
 # # mostrar si aprueba o no
 
-notas=int(input("Ingrese la cant de notas: "))
-suma=0
-for i in range(notas):
-    n=float(input(f"Ingrese la nota {i+1}: "))
-    suma=suma+n
-prom=suma/notas
-print("El promedio es",round(prom, 1) )
+# notas=int(input("Ingrese la cant de notas: "))
+# suma=0
+# for i in range(notas):
+#     n=float(input(f"Ingrese la nota {i+1}: "))
+#     suma=suma+n
+# prom=suma/notas
+# print("El promedio es",round(prom,1) )
 
-if prom>=4:
-    print("ALumno aprobado")
-else:
-    print("ALumno reprobado")
+# if prom>=4:
+#     print("Alumno aprobado")
+# else:
+#     print("Alumno reprobado")
 
 
-# # cuenta la cantidad de vocales
+# # # cuenta la cantidad de vocales
 # nombre=input("Ingrese su nombre: ")
 # vocals=0
 # conso=0
@@ -104,3 +98,25 @@ else:
 #     else:
 #         print("ALumno reprobado")
 #         repro+=1
+
+
+# for i in "Diego":
+#     print(i)
+
+# Pregunte al usuario su nombre u muestra sus letras
+print("Ingrese su nombre")
+name=input()
+vocales=0
+conso=0
+#nombre=("INgreses su nombre: ")
+for i in name:
+    print(i)
+    if i in "aeiouAEIOU":
+        # vocales=vocales+1
+        vocales+=1
+    elif i==" ":
+        ''''''
+    else:
+        conso=conso+1
+print(f"La cantidad de vocales es {vocales}")
+print(f"La cantidad de consocnantes es {conso}")
