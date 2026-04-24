@@ -87,13 +87,13 @@ que sea SHAZAM independiente de su case
 '''Crear un nombre de usuario y verificar su que 
 su largo esté entre 4 y 10 caracteres
 '''
+def nombreUsuario():
+    nombre=input("Ingrese su nombre de usuario: ")
 
-nombre=input("Ingrese su nombre de usuario: ")
-
-if 4<=len(nombre)<=10 :
-    print("Usuario correcto")
-else:
-    print("Usuario fuera de rango")
+    if 4<=len(nombre)<=10 :
+        print("Usuario correcto")
+    else:
+        print("Usuario fuera de rango")
 
 '''Cear un pin y que este tenga exactamente
 4 digitos'''
