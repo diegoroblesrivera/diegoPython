@@ -103,7 +103,7 @@ def variosProgramas():
     op=0
     while op!=4:
         print(''' Menu
-        1.- NOmbre usuario
+        1.- Nmbre usuario
         2.- Sumatoria
         3.- Multinotas
         4.- Salir
@@ -122,7 +122,7 @@ def variosProgramas():
                 print("Opcion inváida")
 
 
-# variosProgramas()
+variosProgramas()
 
 
 
