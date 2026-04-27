@@ -54,31 +54,65 @@ import time
 # se debe mostrar el ganador al final
 # BONUS: mostrar al barras de energia de cada peleador.
 
-p1=input("Ingrese el nombre del peleador 1: ")
-p2=input("Ingrese el nombre del peleador 2: ")
-hp1=100
-hp2=100
-turno=random.randint(1,2)
+# p1=input("Ingrese el nombre del peleador 1: ")
+# p2=input("Ingrese el nombre del peleador 2: ")
+# hp1=100
+# hp2=100
+# turno=random.randint(1,2)
 
-while hp1>0 and hp2>0:
-    if turno%2==0:
-        print(f"turno de {p1}")
-        atk=random.randint(7,18)
-        print(f"el {p1} ataca con {atk} ")
-        hp2-=atk
-        print(f"El hp de {p2} es {hp2}")
-        time.sleep(1)
+# while hp1>0 and hp2>0:
+#     if turno%2==0:
+#         print(f"turno de {p1}")
+#         atk=random.randint(7,18)
+#         print(f"el {p1} ataca con {atk} ")
+#         hp2-=atk
+#         print(f"El hp de {p2} es {hp2}")
+#         time.sleep(1)
+#     else:
+#         print(f"turno de {p2}")
+#         atk=random.randint(7,18)
+#         print(f"el {p2} ataca con {atk} ")
+#         hp1-=atk
+#         print(f"El hp de {p1} es {hp1}")
+#         time.sleep(1)
+#     turno+=1
+#     print(p1, "█"*hp1)
+#     print(p2, "█"*hp2)
+# if hp1>hp2:
+#     print("EL ganador es ", p1)
+# else:
+#     print("EL ganador es ", p2)
+
+# Adivina el numero
+
+# crea un numero random entre 1 y 100
+# Pide al usuario que adivine el numero
+# si el usuario pone un numero mayor al generado
+# debe decir " Te pasaste", en caso contrario
+# " EL numero a adividar es mayor"
+# Solo hay 5 sosibilidades de adivinar.
+
+num=random.randint(1,100)
+pos=1
+guees=int(input("Adivina el numero entre 1 y 100: "))
+while guees<1 or guees>100:
+    print("Numero fuera de rango, intente nuevamente")
+    guees=int(input("Adivina el numero: "))
+while pos<5 and guees!=num:
+    print(num)
+    print(f"turno {pos}")
+    if guees>num :
+        print("Te pasaste")
     else:
-        print(f"turno de {p2}")
-        atk=random.randint(7,18)
-        print(f"el {p2} ataca con {atk} ")
-        hp1-=atk
-        print(f"El hp de {p1} es {hp1}")
-        time.sleep(1)
-    turno+=1
-    print(p1, "█"*hp1)
-    print(p2, "█"*hp2)
-if hp1>hp2:
-    print("EL ganador es ", p1)
+        print("El numero a adividar es mayor")
+    guees=int(input("Adivina el numero: "))
+    while guees<1 or guees>100:
+        print("Numero fuera de rango, intente nuevamente")
+        guees=int(input("Adivina el numero: "))
+    pos+=1
+if guees==num:
+    print("Has adivinado")
 else:
-    print("EL ganador es ", p2)
+    print("Se te acabamos las oportunidades")
+
+
