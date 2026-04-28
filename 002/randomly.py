@@ -97,10 +97,11 @@ import time
 # se debe mostrar el ganador al final
 # BONUS: mostrar al barras de energia de cada peleador.
 # time.sleep(2)
+
 # Ludo 
 # 1 jugador juega, y lanzar dos dados
 # por cada unidad en el dado avanza una posicion en el tablero
-# cuando llegue a 30 , gana
+# cuando llegue a 50 , gana
 # mostrar cuantos turnos le tom
 # llegar a la meta
 
