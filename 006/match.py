@@ -48,36 +48,93 @@ def divi():
 
 # def 
 
-op=0
-while op!=5:
-    op=int(input('''Ingrese una operacion
-                        1.-Suma
-                        2.-Resta
-                        3.-Mutltiplicacion
-                        4.-Division
-                        5.-Salir
-                        '''))
-    match op:
-        case 1:
-            suma()
-        case 2:
-            resta()
-        case 3:
-            multi()
-        case 4:
-            divi()
-        case 5:
-            print("Saliendo del programa")
-        case _:
-            print("Opción Inválida")
+# op=0
+# while op!=5:
+#     # 3
+#     op=int(input('''Ingrese una operacion  
+#                         1.-Suma
+#                         2.-Resta
+#                         3.-Mutltiplicacion
+#                         4.-Division
+#                         5.-Salir
+#                         '''))
+#     match op:
+#         case 1:
+#             suma()
+#         case 2:
+#             resta()
+#         case 3:
+#             multi()
+#         case 4:
+#             divi()
+#         case 5:
+#             print("Saliendo del programa")
+#         case _:
+#             print("Opción Inválida")
     
-op=0
-while op!=4:
-    print('''
-        1.- Programa 1
-        2.- Programa 2
-        3.- Programa 3
-        4.- Salir''')
+# op=0
+# cantPersonas=0 #contar la cant de personas que ingresan al zoo
+# total=0 # total a pagar por las entradas
+# while op!=4:
+#     print('''
+#         1.- Niño (1-17) 1000
+#         2.- Adulto (18-64) 3000
+#         3.- Adulto Mayor (64 o mas) 1500
+#         4.- Salir''')
+#     op=int (input("Seleccione una opcion"))
+#     match op:
+#         case 1:
+#             #Preguntar cuantos son en cada persona
+#             print("Pagando el precio de niño: ")
+#             cantN=int(input("ingrese cuantos niños son"))
+#             # limitar la cant de personas de 1 a 10
+#             while cantN<1 or cantN>10:
+#                 print("EL numero esta fuera de rango (1-10)")
+#                 cantN=int(input("ingrese cuantos niños son: "))
+#             cantPersonas+=cantN
+#             total+=1000*cantN
+#         case 2:
+#             print("Pagando el precio de adulto")
+#             cantN=int(input("ingrese cuantos adulto son"))
+#             cantPersonas+=cantN
+#             total+=3000*cantN
+#         case 3:
+#             print("Pagando el precio de Viejito")
+#             cantN=int(input("ingrese cuantos ancianos son"))
+#             cantPersonas+=cantN
+#             total+=1500*cantN
+#         case 4:
+#             print("Saliendo del programa")
+#             print(f"EL total a pagar es {total}")
+#             print(f"LA cantidad de personas son {cantPersonas}")
+#         case _:
+#             print("Opción Inválida")
 
-            
 
+
+# Preguntar el folio de una entrada a un concierto
+# validar que los folios esten entre 7.000 y 21.000
+# Preguntar si esa en cancha vip, cancha general, o tribuna
+# Cada entrada vale 40000, pero los impuestos son
+# vip * 1.8, genral, 1.4, y tibuna 1.2
+# Mostrar el valor a pagar al final 
+
+folio=int(input("Ingese su folio: "))
+while folio<7000 or folio>21000:
+    print("Folio fuera de rango")
+    folio=int(input("Ingese su folio: "))
+
+cancha=int(input('''Cual cancha es?
+1.- VIP
+2.- General
+3.- Tribuna'''))
+
+match cancha:
+    case 1:
+        print(f"Su total a pagar es {40000*1.8}")
+    case 2:
+        print(f"Su total a pagar es {40000*1.4}")
+    case 3:
+        print(f"Su total a pagar es {40000*1.2}")
+    case _:
+        print("Opcion invalida")
