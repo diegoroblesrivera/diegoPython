@@ -1,7 +1,7 @@
 ent1="Giovani"
 equipo1=6
 
-ent2="Sabrina"
+ent2="Sabrina Carpenter"
 equipo2=4
 
 # print("El entrenador", ent1,"tiene" , equipo1, "Pokemons")
