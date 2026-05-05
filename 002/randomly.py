@@ -128,6 +128,8 @@ import random , time
 #     print("El jugador tres, lanzó la pelota mas lejos")
 
 
+
+
 # # Loteria
 
 # # generar 3 numeros entre 1 y 9
@@ -136,7 +138,6 @@ import random , time
 # # generados, debe poner "ganaste"
 # # contar , cuantos numeros tuvo que tirar
 # # para ganar la loteria .
-
 # n1=random.randint(1,9)
 # n3=random.randint(1,9)
 # n2=random.randint(1,9)
@@ -147,7 +148,7 @@ import random , time
 # print(f"Los numeros generados son: {n1}, {n2} y {n3}")
 # while not t1 or not t2 or not t3:
 #     numerito=random.randint(1,9)
-#     print(" EL numero es", numerito)
+#     print("EL numero es", numerito)
 #     time.sleep(1)
 #     if numerito==n1:
 #         t1=True
@@ -157,6 +158,7 @@ import random , time
 #         t3=True
 #     nums+=1
 # print(f"GANASTE, en {nums} turnos")
+
 
 
 '''
@@ -177,47 +179,83 @@ a las latas internacionales, se le debbe pegar
 in sticker de validacion sanitaria
 
 Ej:800, 7%, 2==> lata mediana espacial con sticker sanitario
+'''
+
+
+
+
+
+
+
+
+
+
+# peso=int(input("Ingrese el peso del producto: "))
+# while peso<1:
+#     print("Ingrese solo valores positivos")
+#     peso=int(input("Ingrese el peso del producto: "))
+# sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
+# while sodio<1 or sodio>100:
+#     print("El porcentaje solo debe ser entre 1 y 100")
+#     sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
+# mercado=int(input("Ingrese el mercado del producto 1.- Nacional , 2 Internacional:"))
+
+# while mercado<1 or mercado>2:
+#     mercado=int(input("Ingrese el mercado del producto 1.- Nacional , 2 Internacional:"))
+
+
+# # hola=input()
+# # hola="Como andamios?"
+# if peso<500:
+#     lata="Lata normal"
+# elif 500<peso<1501:
+#     lata="Lata mediana"
+# elif peso>1500:
+#     lata="Lata grande"
+
+# if sodio<5:
+#     sod=""
+# elif 5<sodio<=8:
+#     sod="especial" 
+# elif sodio>8:
+#     sod="acorazada"
+
+# if mercado==1:
+#     sticker=""
+# else:
+#     sticker="con sticker sanitario"
+
+# print(f"{lata} {sod} {sticker}") 
 
 
 
 '''
+Realizar las clasificacion de peces
+Generar una candidad aleatorea de captura de peces
+entre 10 y 20
+Capturar peces y clasificarlos por su peso
+para saber como se venderan
+800 grs o menos, a lata
+801 o mas, a la placha
+Contar cuando quedaron a la pancha y 
+cuantos quedatos para embasar en lata
+'''
 
-peso=int(input("Ingrese el peso del producto: "))
-while peso<1:
-    print("Ingrese solo valores positivos")
-    peso=int(input("Ingrese el peso del producto: "))
-sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
-while sodio<1 or sodio>100:
-    print("El porcentaje solo debe ser entre 1 y 100")
-    sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
-mercado=input("Ingrese el mercado del producto Nacional, Internacional: ")
-while True :
-    if mercado.lower()!="nacional":
-        print("Ingrse un mercado válido")
-        mercado=input("Ingrese el mercado del producto  Nacional,  Internacional: ")
-    elif mercado.lower()!="internacional":
-        print("Ingrse un mercado válido")
-        mercado=input("Ingrese el mercado del producto  Nacional,  Internacional: ")
-    elif mercado.lower()=="nacional" or mercado.lower()=="internacional":
-        break
+peces=random.randint(10,20)
+p_lata=0
+p_plancha=0
+print(f"Campturamos {peces} peces")
+for p in range(peces):
+    pesoP=random.randint(100, 2000)
+    print(f"EL peso del pez {p} es de {pesoP}")
+    if pesoP<800:
+        p_lata+=1
+    else:
+        p_plancha+=1
+print(f"La cantidad de leces para enlatar es {p_lata}")
+print(f"La cantidad de leces para la plancha es {p_plancha}")
 
-if peso<500:
-    lata="Lata normal"
-elif 500<peso<1501:
-    lata="Lata mediana"
-elif peso>1500:
-    lata="Lata grande"
 
-if sodio<5:
-    sod=""
-elif 5<sodio<=8:
-    sod="especial" 
-elif sodio>8:
-    sod="acorazada"
 
-if mercado.lower()!="nacional":
-    sticker=""
-else:
-    sticker="con sticker sanitario"
 
-print(f"{lata} {sod} {sticker}") 
+
