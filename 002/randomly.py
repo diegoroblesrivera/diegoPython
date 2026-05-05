@@ -1,7 +1,6 @@
 #uso y ejemplos de random
 
-import random 
-import time
+import random , time
 # num=random.randint(1,10)
 # print(num)
 
@@ -107,29 +106,118 @@ import time
 
 
 
-# 3 personas juegan golf
-# cada persona tiene la posibilidad de golpear
-# y la distancia varia ente 60 y 190 metros
-# mostrar al final, el golpe mas fuerte
+# # 3 personas juegan golf
+# # cada persona tiene la posibilidad de golpear
+# # y la distancia varia ente 60 y 190 metros
+# # mostrar al final, el golpe mas fuerte
 
-j1=random.randint(60,190)
-j2=random.randint(60,190)
-j3=random.randint(60,190)
-print(f"El jugador 1 lanzo la pelota {j1} metros ")
-print(f"El jugador 2 lanzo la pelota {j2} metros ")
-print(f"El jugador 3 lanzo la pelota {j3} metros ")
-time.sleep(1)
-if j1>j2 and j1>j3:
-    print("El jugador uno, lanzó la pelota mas lejos")
-elif j2>j3:
-    print("El jugador dos, lanzó la pelota mas lejos")
-elif j1==j2==j3:
-    print("LOs tre mandaoron la peloda a la misma distancia")
+# j1=random.randint(60,190)
+# j2=random.randint(60,190)
+# j3=random.randint(60,190)
+# print(f"El jugador 1 lanzo la pelota {j1} metros ")
+# print(f"El jugador 2 lanzo la pelota {j2} metros ")
+# print(f"El jugador 3 lanzo la pelota {j3} metros ")
+# time.sleep(1)
+# if j1>j2 and j1>j3:
+#     print("El jugador uno, lanzó la pelota mas lejos")
+# elif j2>j3:
+#     print("El jugador dos, lanzó la pelota mas lejos")
+# elif j1==j2==j3:
+#     print("LOs tre mandaoron la peloda a la misma distancia")
+# else:
+#     print("El jugador tres, lanzó la pelota mas lejos")
+
+
+# # Loteria
+
+# # generar 3 numeros entre 1 y 9
+# # luego, tirar numeros al azar en ese rango 
+# # Cuando todos los numeros coincidan con los primeros 3 
+# # generados, debe poner "ganaste"
+# # contar , cuantos numeros tuvo que tirar
+# # para ganar la loteria .
+
+# n1=random.randint(1,9)
+# n3=random.randint(1,9)
+# n2=random.randint(1,9)
+# t1=False
+# t2=False
+# t3=False
+# nums=0
+# print(f"Los numeros generados son: {n1}, {n2} y {n3}")
+# while not t1 or not t2 or not t3:
+#     numerito=random.randint(1,9)
+#     print(" EL numero es", numerito)
+#     time.sleep(1)
+#     if numerito==n1:
+#         t1=True
+#     if numerito==n2:
+#         t2=True
+#     if numerito==n3:
+#         t3=True
+#     nums+=1
+# print(f"GANASTE, en {nums} turnos")
+
+
+'''
+Fabrica de enlatados
+Se necesita hacer el algoritomo de productos enlatados
+Se debe consultar el peso del producto( en gramos) ( solo valores positivos)
+El porcentaje de sodio en él ( solo valores entre 1 y 100)
+y si se va a vender nacional o internacionalmente
+Considerar los criterios en la siguiente tabla
+
+menos de 500 grs, lata normal
+501 hassta 1500 bgr, lata mediana
+1501 y mas , lata grande
+si el sodio es menos de 5%, lata queda igual
+si es entre 5% y 8% lata especial
+si tiene 9% o mas, lata acorazada
+a las latas internacionales, se le debbe pegar 
+in sticker de validacion sanitaria
+
+Ej:800, 7%, 2==> lata mediana espacial con sticker sanitario
+
+
+
+'''
+
+peso=int(input("Ingrese el peso del producto: "))
+while peso<1:
+    print("Ingrese solo valores positivos")
+    peso=int(input("Ingrese el peso del producto: "))
+sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
+while sodio<1 or sodio>100:
+    print("El porcentaje solo debe ser entre 1 y 100")
+    sodio=int(input("Ingrese el porcentaje de sodio del producto: "))
+mercado=input("Ingrese el mercado del producto Nacional, Internacional: ")
+while True :
+    if mercado.lower()!="nacional":
+        print("Ingrse un mercado válido")
+        mercado=input("Ingrese el mercado del producto  Nacional,  Internacional: ")
+    elif mercado.lower()!="internacional":
+        print("Ingrse un mercado válido")
+        mercado=input("Ingrese el mercado del producto  Nacional,  Internacional: ")
+    elif mercado.lower()=="nacional" or mercado.lower()=="internacional":
+        break
+
+if peso<500:
+    lata="Lata normal"
+elif 500<peso<1501:
+    lata="Lata mediana"
+elif peso>1500:
+    lata="Lata grande"
+
+if sodio<5:
+    sod=""
+elif 5<sodio<=8:
+    sod="especial" 
+elif sodio>8:
+    sod="acorazada"
+
+if mercado.lower()!="nacional":
+    sticker=""
 else:
-    print("El jugador tres, lanzó la pelota mas lejos")
+    sticker="con sticker sanitario"
 
-
-
-
-
-
+print(f"{lata} {sod} {sticker}") 
