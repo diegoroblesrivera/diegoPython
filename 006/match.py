@@ -22,6 +22,7 @@
 #             print(f"Su total a pagar es {total}")
 #         case _:
 #             print("Opcion Inválida")  # opcion por defecto
+
 name="Carlos"
 def saludo():
     print("Hola como van?")
