@@ -113,7 +113,7 @@ def divi():
 
 
 
-# Preguntar el folio de una entrada a un concierto
+# Preguntar el codigo de descuento de una entrada a un concierto
 # validar que los folios esten entre 7.000 y 21.000
 # Preguntar si esa en cancha vip, cancha general, o tribuna
 # Cada entrada vale 40000, pero los impuestos son

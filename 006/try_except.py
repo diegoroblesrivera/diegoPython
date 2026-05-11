@@ -67,12 +67,72 @@
 #     except :
 #         print("Debe ingresar solo numeros enteros")
 
-porc=float(input("Ingrese el porcetaje de rucos en su comuna"))
+# porc=float(input("Ingrese el porcetaje de rucos en su comuna"))
 
-if porc>0 and porc<100:
-    print("Porcentaje correcto")
+# if porc>0 and porc<100:
+#     print("Porcentaje correcto")
+# else:
+#     print("Porcentaje fuera de rango")
+
+
+# # validacion de pasajes y manejo de error
+
+# totalIngresos=0
+# pasaje=int(input("Ingrese la cantidad de pasajes que quiere vender: "))
+# for i in range(pasaje):
+#     while True:
+#         try:
+#             monto=int(input("Ingrese el Valor de cada pasaje: "))
+#             break
+#         except:
+#             print("Dato No Valido, ingeressar un nuemro entero positivo")
+            
+#     totalIngresos+=monto
+   
+# print(f"Monto {totalIngresos}")
+# print(f"Por la cantidad de {pasaje} entradas")
+
+
+toon1=input("Ingrese el toon 1: ")
+toon2=input("Ingrese el toon 2: ")
+
+v1=0
+v2=0
+while True:
+    try:
+        cant=int(input("Cauntos votantes son? "))
+        break
+    except:
+        print( " Solo puede ingresar valores enteros positivos")
+while cant>0:
+    # pedir votos
+    while True:
+        try:
+            voto=int(input(f"Por quien votará? 1.- {toon1} 2.- {toon2}: "))
+            break
+        except ValueError as r:
+            print( " Solo puede ingresar valores enteros positivos")
+    if voto==1:
+        v1+=1
+    elif voto==2:
+        v2+=1
+    else:
+        print("Voto nulo")
+    cant-=1
+
+if v1>v2:
+    print(f"Gano {toon1} con {v1} votos")
+elif v2>v1:
+    print(f"Gano {toon2} con {v2} votos")
 else:
-    print("Porcentaje fuera de rango")
+    print("Fue un empate")
 
+# Preguntar el codigo de descuento de una entrada a un concierto
+# validar que los folios esten entre 7.000 y 21.000
+# Preguntar si esa en cancha vip, cancha general, o tribuna
+# Cada entrada vale 40000, pero los impuestos son
+# vip * 1.8, genral, 1.4, y tibuna 1.2
+# Mostrar el valor a pagar al final 
+# poner manejo de error ára poder solucionarlo
 
 
