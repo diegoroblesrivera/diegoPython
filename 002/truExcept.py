@@ -38,28 +38,60 @@
 #             print("El total a pagar es", total)
 #         case _:
 #             print("Opción inválida")
+# while True:
+#     try:
+#         notas=int(input("Ingrese la cant de notas: "))
+#         break
+#     except:
+#         print("Solo mnumeros enteros")
+
+# suma=0
+# for i in range(notas):
+#     while True:
+#         try:
+#             n=float(input(f"Ingrese la nota {i+1}: "))
+#             break
+#         except ValueError:
+#             print("Solo numeros decimales")
+#     suma=suma+n
+#     # suma+=n
+# prom=suma/notas
+# print("El promedio es",round(prom,1) )
+
+# if prom>=4:
+#     print("Alumno aprobado")
+# else:
+#     print("Alumno reprobado")
+
+
+# actividad 2.4.3
+
+
+# Deberás construir un programa que esta diseñado para ayudar en la venta de pasajes. Inicia preguntándote cuántos pasajes deseas vender. Luego, utiliza un proceso organizado (llamado bucle for) para pedirte el precio de cada pasaje por separado. Si ingresas un valor que no es un número, te indica que necesitas proporcionar un valor numérico válido. Al final, muestra el monto total que se ha obtenido por la venta de todos los pasajes
+# •	Solicita al usuario la cantidad de pasajes a vender.
+# •	Se utiliza un bucle for para iterar sobre la cantidad de pasajes.
+# •	Dentro del bucle, se solicita al usuario el precio de cada pasaje y se acumula en la variable totalIngresos.
+# •	Si el usuario ingresa un valor no numérico para el precio del pasaje, el programa muestra un mensaje y sale del bucle usando break.
+# •	Finalmente, se imprime el total de ingresos por la venta de pasajes
+
+
+
+
 while True:
     try:
-        notas=int(input("Ingrese la cant de notas: "))
+        pas=int(input("Cuantos pasajes desea llevar: "))
         break
-    except:
-        print("Solo mnumeros enteros")
-
-suma=0
-for i in range(notas):
+    except ValueError as e:
+        print("Error", e)
+        print("Solo numeros enteros")
+total=0
+for i in range(pas):
     while True:
         try:
-            n=float(input(f"Ingrese la nota {i+1}: "))
+            precio=int(input(f"Cuanto vale el pasaje {i+1}: "))
             break
-        except ValueError:
-            print("Solo numeros decimales")
-    suma=suma+n
-    # suma+=n
-prom=suma/notas
-print("El promedio es",round(prom,1) )
-
-if prom>=4:
-    print("Alumno aprobado")
-else:
-    print("Alumno reprobado")
-
+        except ValueError as a:
+            print("Error", a)
+            print("Solo numeros enteros")
+    total+=precio
+print(f"El precio total a pagar es de {total}")
