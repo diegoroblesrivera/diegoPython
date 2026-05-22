@@ -89,7 +89,7 @@ Las opciones disponibles deben estar construidas de la siguiente forma:
 a.	El usuario comienza con una deuda de $100.000
 b.	El usuario puede ingresar un monto para realizar un pago en la tarje-ta de crédito.
 c.	Se debe verificar que el monto ingresado sea mayor o igual a cero.
-d.	Se debe verificar que el monto a pagar no exceda el saldo actual de la tarjeta.
+d.	Se debe verificar que el monto a pagar no exceda la deuda actual de la tarjeta.
 e.	Al pagar el sistema debe descontar de la deuda total
 f.	Si las verificaciones son exitosas, se realiza el pago y se actualiza el saldo de la tarjeta.
 2.	Simulación de Compras:
@@ -126,12 +126,13 @@ while op!=4:
             try:
                 if subop1==1:
                  suma=int(input("cuanto desea agregar a la tarjeta: "))
-                 deuda=deuda+suma
+                 while suma>deuda:
+                     print("No puede pagar mas de lo que debe!")
+                     suma=int(input("cuanto desea agregar a la tarjeta: "))
+                 
                  break
             except ValueError:
                 print("Debe ser un numero mayor que 0")
-                suma=int(input("cuanto desea agregar a la tarjeta: "))
-                deuda=deuda+suma
                 break
      elif op==2:
         valor=int(input("ingrese el valor de la compra: "))
