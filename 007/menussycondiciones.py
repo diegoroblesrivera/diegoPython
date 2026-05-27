@@ -106,3 +106,14 @@ for i in range(personas):
 print(f"El total de cuadros vistos fue {vistos}")
 print(f"El total de cuadros NO vistos fue {noVistos}")
 
+'''
+Silva rojas
+Fernandez
+ramirez
+otarola
+Guiñez
+Briones
+orellana
+Lopez Enzo
+Irarrazabal.
+'''
