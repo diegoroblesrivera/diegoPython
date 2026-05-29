@@ -56,49 +56,87 @@
 # for a in animales:
 #     print(a)
 
+productos=[
+   ["Xbox Series S", 300000],
+   ["Sony PS5", 600000],
+   ["LGTV 60 Pulgadas", 450000]
+]
 
-# ## DICCIONARIO
+def menuProd():
+   select=1
+   for p in productos:
+      print(f"{select}.- Producto: {p[0]} Precio: $ {p[1]}")
+      select+=1
 
-# alumno={
-#     "nombre":  "Wanda MAximoff",
-#     "carrera": "Informatica",
-#     "edad":    24
-# }
+def menuPrincipal():
+   print("1.- Menu admin")
+   print("2.- Menu cliente")
+   print("3.- Salir")
 
-# # # recorrer cada elemento de un diccionario
-# # print(alumno)
-# for key, value in alumno.items():
-#     print(key, value)
-# #buscar
-# print(alumno["edad"])
-
-# # insersion 
-# alumno["email"]="wanda@gamail.com"
-
-# # actualizacion
-# alumno["edad"]=26
-
-# # Eliminacion
-# del alumno["carrera"]
+op=0
 
 
-# for key, value in alumno.items():
-#     print(key, value)
+def selectProd():
+   total=0
+   while True:
+      menuProd()
+      print("4.- Salir")
+      op=int(input("Seleccione una opcion: "))
+      match op:
+         case 1:
+               print("El valor a pagar ", 250000*1.19)
+               total+=250000*1.19
+         case 2:
+               print("El valor a pagar ", 500000*1.19)
+               total+=500000*1.19
+         case 3:
+               print("El valor a pagar ", 600000*1.19)
+               total+=600000*1.19
+         case 4:
+               print("Saliendo")
+               print(f"El total a pagar es {total}")
+               break
+         case _:
+               print("Opcion Invalida")
 
-## Cree un diccionario de 3 productos, cada uno 
-# con nombre, categoria, precio.
+def selectAdmin():
+    while True:
+      print("1.- Agregar Producto")
+      print("2.- Eliminar Producto")
+      print("3.- Actualizar Producto")
+      print("4.- Mostrar Productos")
+      print("5.- Volver al menu principal")
+      op=int(input("Seleccione una opcion: "))
+      match op:
+         case 1:
+            nombreP=input("Ingrese el nombre del Producto: ")
+            precioP=int(input("Ingrese el precio del Producto: "))
+            productos.append([nombreP, precioP])
+         case 4:
+            menuProd()
+         case 5:
+            print("Salir")
+            break
+         case _:
+            print("Opcion invalida")   
 
-productos={
-    1:{"nombre": "Laptop",
-       "categoria": "Electronica",
-       "precio": 400000},
-    2:{"nombre": "Chaqueta",
-       "categoria": "Vestuario",
-       "precio": 40000},
-    3:{"nombre": "Caable HDMI",
-       "categoria": "Accesorios",
-       "precio": 5000},
+def selectPrin():
+   while True:
+      menuPrincipal()
+      op=int(input("Seleccione una opcion: "))
+      match op:
+         case 1:
+            print("---Menu admin---")
+            selectAdmin()
+         case 2:
+            print("---Menu Cliente---")
+            selectProd()
+         case 3:
+            print("Salir")
+            break
+         case _:
+            print("Opcion invalida")   
+  
+selectPrin()         
 
-}
 
-print(productos[3]["categoria"])
