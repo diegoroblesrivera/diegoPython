@@ -1,4 +1,4 @@
-# crea un alista de frutas y realizar todos estas operaciones
+# crea una lista de frutas y realizar todos estas operaciones
     #   print("1.- Agregar Fruta")
     #   print("2.- Eliminar Fruta")
     #   print("3.- Actualizar Fruta")
@@ -54,4 +54,4 @@ def feria():
             print("Opcion invalida")   
 
 
-
+feria()
