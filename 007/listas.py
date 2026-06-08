@@ -93,7 +93,7 @@ EL producto debe tener Nombre y precio
 # for c in colores:
 #     print(c)
 
-
+## CRUD LISTAS
 juguetes=["yo-yo", "tetris"]
 
 def mostrarJuguetes():
