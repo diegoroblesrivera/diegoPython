@@ -1,23 +1,23 @@
 # ## DICCIONARIO
 
-# alumno={
-#     "nombre":  "Wanda MAximoff",
-#     "carrera": "Informatica",
-#     "edad":    24
-# }
+alumno={
+    "nombre":  "Wanda MAximoff",
+    "carrera": "Informatica",
+    "edad":    24
+}
 
-# # # recorrer cada elemento de un diccionario
-# # print(alumno)
-# for key, value in alumno.items():
-#     print(key, value)
-# #buscar
-# print(alumno["edad"])
+# # recorrer cada elemento de un diccionario
+# print(alumno)
+for key, value in alumno.items():
+    print(key, value)
+#buscar
+print(alumno["edad"])
 
-# # insersion 
-# alumno["email"]="wanda@gamail.com"
+# insersion 
+alumno["email"]="wanda@gamail.com"
 
-# # actualizacion
-# alumno["edad"]=26
+# actualizacion
+alumno["edad"]=26
 
 # # Eliminacion
 # del alumno["carrera"]
