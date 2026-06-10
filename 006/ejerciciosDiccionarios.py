@@ -60,8 +60,18 @@ productosDicc={
 }
 
 
-# print(productosDicc[2]["precio"])  # precio de la pera
-# print(productosDicc[3]["nombre"])  # precio de la pera
+print(productosDicc.keys())
+print(productosDicc.values())
+print(productosDicc.items())
+
+for i in productosDicc.values():
+    print(i["nombre"],  i["precio"])
+
+for num, producto in productosDicc.items():
+    print( producto["nombre"],  producto["precio"])
+
+print(productosDicc[2]["precio"])  # precio de la pera
+print(productosDicc[3]["nombre"])  # el nombre de la cebolla
 
 # productosList=[
 #    {"nombre": "Maracuyá", "precio": 3000},
@@ -72,10 +82,20 @@ productosDicc={
 # print(productosList[2]["precio"]) #precio de la cebolla
 # print(productosList[0]["nombre"]) #precio de la cebolla
 pokemons={
-    1:{"nombre": "Eevee",
-       "nlv": 14,
-       "hp": 32,
-       "atk": [20,40] }
+    1:{ "nombre": "Eevee",
+        "nlv": 14,
+        "hp": 32,
+        "atk": 
+        {
+            1:{"nombre":"placaje", "daño": [16-24]},
+            2:{"nombre":"placaje", "daño": [16-24]},
+            3:{"nombre":"placaje", "daño": [16-24]},
+            4:{"nombre":"placaje", "daño": [16-24]}
+         },
+        "def":10,
+        "type": "normal",
+        "vel": 12,
+                }
 }
 
 productosDicc={
@@ -166,7 +186,7 @@ def productosMenu():
             print("Error :", e)
 
 
-productosMenu()
+# productosMenu()
 
 
 
