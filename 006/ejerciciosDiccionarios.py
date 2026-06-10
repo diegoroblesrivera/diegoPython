@@ -60,18 +60,18 @@ productosDicc={
 }
 
 
-print(productosDicc.keys())
-print(productosDicc.values())
-print(productosDicc.items())
+# print(productosDicc.keys())
+# print(productosDicc.values())
+# print(productosDicc.items())
 
-for i in productosDicc.values():
-    print(i["nombre"],  i["precio"])
+# for i in productosDicc.values():
+#     print(i["nombre"],  i["precio"])
 
-for num, producto in productosDicc.items():
-    print( producto["nombre"],  producto["precio"])
+# for num, producto in productosDicc.items():
+#     print( producto["nombre"],  producto["precio"])
 
-print(productosDicc[2]["precio"])  # precio de la pera
-print(productosDicc[3]["nombre"])  # el nombre de la cebolla
+# print(productosDicc[2]["precio"])  # precio de la pera
+# print(productosDicc[3]["nombre"])  # el nombre de la cebolla
 
 # productosList=[
 #    {"nombre": "Maracuyá", "precio": 3000},
@@ -81,6 +81,16 @@ print(productosDicc[3]["nombre"])  # el nombre de la cebolla
 
 # print(productosList[2]["precio"]) #precio de la cebolla
 # print(productosList[0]["nombre"]) #precio de la cebolla
+
+pkes=[
+    {"nombre": "Eevee",
+        "nlv": 14,
+        "hpMax": 32,
+        "hpActual": 32,
+        "atk":[19, 25]
+        }
+]
+
 pokemons={
     1:{ "nombre": "Eevee",
         "nlv": 14,
@@ -88,9 +98,9 @@ pokemons={
         "atk": 
         {
             1:{"nombre":"placaje", "daño": [16-24]},
-            2:{"nombre":"placaje", "daño": [16-24]},
-            3:{"nombre":"placaje", "daño": [16-24]},
-            4:{"nombre":"placaje", "daño": [16-24]}
+            2:{"nombre":"doble patada", "daño": [16-24]},
+            3:{"nombre":"agilidad", "daño": [16-24]},
+            4:{"nombre":"gruñido", "daño": [16-24]}
          },
         "def":10,
         "type": "normal",
@@ -106,12 +116,18 @@ productosDicc={
 productosDicc[4]={"nombre": "Tomate", "precio": 1500} 
 
 
+list(productosDicc.keys())[-1]
+
+for i, m in productosDicc.items():
+    print(i , m.values())
+
+
 # print(productosDicc.keys())
 # print(productosDicc.values())
-# print(productosDicc.items())
+# print(productosDicc)
 # listadeKeys=list(productosDicc.keys())
 
-# print(list(productosDicc.keys())[-1])
+print(list(productosDicc.keys())[-1]+1)
 carrito=[]
 def agregaProducto():
     nombreP=input("Ingrese el nombre del Producto: ")
@@ -119,8 +135,8 @@ def agregaProducto():
     productosDicc[list(productosDicc.keys())[-1]+1]={"nombre": nombreP, "precio": precioP} 
 def muestraProducto():
     print("-"*30)
-    for nombre, precio in productosDicc.items():
-        print(f"{nombre} .-  {precio}")
+    for num, precio in productosDicc.items():
+        print(f"{num} .-  {precio["nombre"]} ${precio["precio"]}")
     print("-"*30)
 def eliminaProducto():
     muestraProducto()
@@ -134,27 +150,31 @@ def actualiazaProducto():
     productosDicc[actualiza]={"nombre":nuevonombre , "precio": nuevoPRECIO}
 
 def comprar():
-    muestraProducto()
-    try:
-        comprar=int(input("Cual producto desea comprar ?: "))
-        if comprar in productosDicc:
-            print(f"Usted ha comprado {productosDicc[comprar]['nombre']} por un valor de {productosDicc[comprar]['precio']}")
-            carrito.append(productosDicc[comprar])
-        else:
-            print("Producto no existe")
-    except ValueError:
-        print("Debe ingresar un número válido")
+    while True:
+        muestraProducto()
+        try:
+            comprar=int(input("Cual producto desea comprar ? (0 para salir): "))
+            if comprar==0:
+                break
+            if comprar in productosDicc:
+                print(f"Usted ha comprado {productosDicc[comprar]['nombre']} por un valor de {productosDicc[comprar]['precio']}")
+                carrito.append(productosDicc[comprar])
+            else:
+                print("Producto no existe")
+        except ValueError:
+            print("Debe ingresar un número válido")
 def boleta():
     total=0
+    print("-"*30, "0", "-"*30)
+    print("Minimarker MR Satan")
     for p in carrito:
-        try:
-            total+=int(p["precio"])
-            
-        except (ValueError, TypeError):
-            print(f"Precio inválido para {p.get('nombre','?')}, contando como 0")
+        print(p["nombre"], "___$", p["precio"])
+        total+=int(p["precio"])
+        # print(f"Precio inválido para {p.get('nombre','?')}, contando como 0")
     iva=total*0.19
     print(f"El total de su compra es {total} y el IVA es {iva}")
     print(f"El total a pagar es  {total+iva} ")
+    print("-"*30, "0", "-"*30)
 def productosMenu():
     while True:
         try:
@@ -186,7 +206,7 @@ def productosMenu():
             print("Error :", e)
 
 
-# productosMenu()
+productosMenu()
 
 
 
