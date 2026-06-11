@@ -97,10 +97,10 @@ pokemons={
         "hp": 32,
         "atk": 
         {
-            1:{"nombre":"placaje", "daño": [16-24]},
-            2:{"nombre":"doble patada", "daño": [16-24]},
-            3:{"nombre":"agilidad", "daño": [16-24]},
-            4:{"nombre":"gruñido", "daño": [16-24]}
+            1:{"nombre":"placaje", "daño": [16,24]},
+            2:{"nombre":"doble patada", "daño": [16,34]},
+            3:{"nombre":"agilidad", "daño": [16,24]},
+            4:{"nombre":"gruñido", "daño": [16,24]}
          },
         "def":10,
         "type": "normal",

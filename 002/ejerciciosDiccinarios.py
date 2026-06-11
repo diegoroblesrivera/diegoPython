@@ -5,8 +5,9 @@ pokemons={
     4:{"nombre":"Eevee", "nivel": 12 }
 } 
 print(list(pokemons.keys())[-1]+1)
-# print(pokemons.values())
-# print(pokemons.items())
+print(pokemons.keys())
+print(pokemons.values())
+print(pokemons.items())
 # # list()
 # for num, pkm in pokemons.items():
 #     print(num, pkm)
@@ -94,8 +95,8 @@ productos={
 # } 
 carrito=[]
 def mostrar():
-    for p, z in productos.items():
-        print(f"{p}.- {z['nombre']} - {z['precio']}")
+    for num, prod in productos.items():
+        print(f"{num}.- {prod['nombre']}  ${prod['precio']}")
     print("-"*30)
 def eliminar():
     mostrar()
@@ -131,27 +132,33 @@ def agregar():
         nvl=0
     productos[list(productos.keys())[-1]+1]={"nombre":pkm, "precio": nvl }
 def comprar():
-    mostrar()
-    try:
-        comprar=int(input("Cual producto desea comprar ?: "))
-        if comprar in productos:
-            print(f"Usted ha comprado {productos[comprar]['nombre']} por un valor de {productos[comprar]['precio']}")
-            carrito.append(productos[comprar])
-        else:
-            print("Producto no existe")
-    except ValueError:
-        print("Debe ingresar un número válido")
+    while True:
+        mostrar()
+        try:
+            comprar=int(input("Cual producto desea comprar ? ( para salir, ponga 0): "))
+            if comprar==0:
+                break
+            if comprar in productos:
+                print(f"Usted ha comprado {productos[comprar]['nombre']} por un valor de {productos[comprar]['precio']}")
+                carrito.append(productos[comprar])
+            else:
+                print("Producto no existe")
+        except ValueError:
+            print("Debe ingresar un número válido")
 def boleta():
     total=0
+    print("-"*30, "0", "-"*30)
+    print("Bienvenido a minimarquet Lost Woods")
+    print("-"*30, "0", "-"*30)
     for p in carrito:
-        try:
-            total+=int(p["precio"])
-            
-        except (ValueError, TypeError):
-            print(f"Precio inválido para {p.get('nombre','?')}, contando como 0")
+        total+=int(p["precio"])
+        print(p["nombre"],"---$", p["precio"])
     iva=total*0.19
+    print("-"*30, "0", "-"*30)
     print(f"El total de su compra es {total} y el IVA es {iva}")
     print(f"El total a pagar es  {total+iva} ")
+    print("Gracias por comprar en minimarquet Lost Woods")
+    print("-"*30, "0", "-"*30)
 def menuProductos():
     while True:
         try:
@@ -184,6 +191,28 @@ def menuProductos():
 
 
 menuProductos()
+
+##reto 1
+# Cambiar el menu 5 para que sea recursivo
+# Voy a seguir comprando hasta que el usuario 
+# ponga  condicion para salir.
+##Reto 2
+# Hacer que la boleta parezca boleta
+# que tenga un mensaje de bienvenida
+# luego cada productos listado de esta menera
+# Prod 1---$5000
+# Prod 2---$1000
+# Prod 3---$2000
+# Prod 4---$6000
+# los totales a pagar
+# Fialmente un mensaje de cierre
+########TAREA########
+# Tomar el CRUD de diccionario que está en este archivo
+# y manipurar un diccionaario creado por usted
+# puede ser cartas pokemon, autos, peliculas, series,  etc.
+# Presentarlo el dia martes en la clase para revisarlo
+# con el profesor.
+
 
 
 
