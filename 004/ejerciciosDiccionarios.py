@@ -114,27 +114,31 @@ def actualiazaProducto():
     productosDicc[actualiza]={"nombre":nuevonombre , "precio": nuevoPRECIO}
 
 def comprar():
-    muestraProducto()
-    try:
-        comprar=int(input("Cual producto desea comprar ?: "))
-        if comprar in productosDicc:
-            print(f"Usted ha comprado {productosDicc[comprar]['nombre']} por un valor de {productosDicc[comprar]['precio']}")
-            carrito.append(productosDicc[comprar])
-        else:
-            print("Producto no existe")
-    except ValueError:
-        print("Debe ingresar un número válido")
+    while True:
+        muestraProducto()
+        try:
+            comprar=int(input("Cual producto desea comprar ?:(para salir presione 0 ) "))
+            if comprar==0:
+                break
+            if comprar in productosDicc:
+                print(f"Usted ha comprado {productosDicc[comprar]['nombre']} por un valor de {productosDicc[comprar]['precio']}")
+                carrito.append(productosDicc[comprar])
+            else:
+                print("Producto no existe")
+        except ValueError:
+            print("Debe ingresar un número válido")
 def boleta():
     total=0
-    for p in carrito:
-        try:
-            total+=int(p["precio"])
-            
-        except (ValueError, TypeError):
-            print(f"Precio inválido para {p.get('nombre','?')}, contando como 0")
-    iva=total*0.19
-    print(f"El total de su compra es {total} y el IVA es {iva}")
-    print(f"El total a pagar es  {total+iva} ")
+    print("-"*30, "0", "-"*30)
+    print("Bienvenido a minimarket Bender")
+    for prod in carrito:
+        print(f"{prod["nombre"]}___${prod["precio"]}")
+        total+=prod["precio"]
+    print("-"*30, "0", "-"*30)
+    print(f"El total neto es {total} y el IVA es {total*0.19}")
+    print(f"El total a pagar es {round(total*1.19)} ")
+    print("Gracias por venir a minimarket Bender")
+    print("-"*30, "0", "-"*30)
 def productosMenu():
     while True:
         try:

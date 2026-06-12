@@ -76,10 +76,10 @@ temperaturas={
 
 # print(temperaturas)
 maximos=[]
-# for dia, maxi in temperaturas.items():
-#    print(dia, maxi)
-#    maximos.append(maxi)
-# print(max(maximos))
+for dia, maxi in temperaturas.items():
+   print(dia, maxi)
+   maximos.append(maxi)
+print(max(maximos))
 
 
 alumno={
@@ -106,51 +106,34 @@ def actulizar():
     dato=input("Digame que actualizara: ")
     valor=input("cual sera el nuevo valor ")
     alumno[dato]=valor
-# print(alumno.items())
-# print(alumno.keys())
-# print(alumno.values())
+print(alumno.items())
+print(alumno.keys())
+print(alumno.values())
 
-def menuAlumno():
-    while True:
-        try:
-            print("1.- Agregar dato")
-            print("2.- Borrar datos")
-            print("3.- Actualizar dato")
-            print("4.- Mostrar datos")
-            print("5.- Salir")
-            op=int(input("Seleccione un opcion: "))
-            match op:
-                case 1:
-                    agregar()
 
-                case 2:
-                    eliminardato()
-                case 3:
-                    actulizar()
-                case 4:
-                    mostrar()
-                case 5:
-                    print("Saliendo")
-                    break
-                case _:
-                    print("Opcion bo válida")
-                    
-        except Exception as e:
-            print("Error:", e)
+while True:
+    try:
+        print("1.- Agregar dato")
+        print("2.- Borrar datos")
+        print("3.- Actualizar dato")
+        print("4.- Mostrar datos")
+        print("5.- Salir")
+        op=int(input("Seleccione un opcion: "))
+        match op:
+            case 1:
+                agregar()
 
-productos={
-    1:{"nombre":"leche", "precio":1200},
-    2:{"nombre":"mani", "precio":1600},
-    3:{"nombre":"cereal", "precio":3200}
-}
-
-'''
-print("1.- Agregar producto")
-            print("2.- Borrar producto")
-            print("3.- Actualizar producto")
-            print("4.- Mostrar productos")
-            print("5.- Salir")'''
-
-print("El precio del mani es:",productos[2]["precio"])
-print("El nombre del cereal es:",productos[3]["nombre"])
-
+            case 2:
+                eliminardato()
+            case 3:
+               actulizar()
+            case 4:
+                mostrar()
+            case 5:
+                print("Saliendo")
+                break
+            case _:
+                print("Opcion bo válida")
+                
+    except Exception as e:
+        print("Error:", e)
