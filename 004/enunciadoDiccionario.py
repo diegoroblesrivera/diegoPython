@@ -21,8 +21,41 @@ parking={
     4:[]
 
 }
-
-print(len(parking[1]))
+def ingresAuto():
+    valor=0
+    print("Ingresar vheiculo nuevo")
+    tipo=int(input("Que tipo es?: \n1.-Ligero\n2.-Mediano\n3.-Pesado"))
+    if tipo==1:
+        valor=2000
+    elif tipo==2:
+        valor=3000
+    elif tipo==3:
+        valor=3500
+    else:
+        print("Vehiculo invalido")
+    piso=int(input("EN que piso va?: "))
+    if piso in [1,2,3,4] and valor>0 :
+        if len(parking[piso])<10:
+            parking[piso].append(valor)
+            print("Agregado al piso", piso)
+        else:
+            print("Piso lleno")
+    else:
+        print("Piso no válido")
+def calculaGanancias():
+    totalGanancias=0
+    print("Contando Ganancias")
+    for piso in parking.values():
+        totalGanancias+=sum(piso)
+    print(f"El total recudado es {totalGanancias}")
+def cuentAutos():
+    totalAutos=0
+    for piso in parking.values():
+        totalAutos+=len(piso)
+    print("El total de autos en el parking es:", totalAutos)
+def muestrAutos():
+    for h, t in parking.items():
+        print(h, ".- ", t)
 
 def parkingAutos():
     while True:
@@ -35,39 +68,13 @@ def parkingAutos():
             op=int(input("Seleccione un a opcion: "))
             match op:
                 case 1:
-                    print("Ingresar vheiculo nuevo")
-                    tipo=int(input("Que tipo es?: \n1.-Ligero\n2.-Mediano\n3.-Pesado"))
-                    if tipo==1:
-                        valor=2000
-                    elif tipo==2:
-                        valor=3000
-                    elif tipo==3:
-                        valor=3500
-                    else:
-                        print("Vehiculo invalido")
-                    piso=int(input("EN que piso va?: "))
-                    if piso in [1,2,3,4]:
-                        if len(parking[piso])<10:
-                            parking[piso].append(valor)
-                            print("Agregado al piso", piso)
-                        else:
-                            print("Piso lleno")
+                    ingresAuto()
                 case 2:
-                    totalGanancias=0
-                    print("Contando Ganancias")
-                    for piso in parking.values():
-                        totalGanancias+=sum(piso)
-                    print(f"El total recudado es {totalGanancias}")
+                    calculaGanancias()
                 case 3:
-                    totalAutos=0
-                    for piso in parking.values():
-                        totalAutos+=len(piso)
-                    print("El total de autos en el parking es:", totalAutos)
-
-                    
+                    cuentAutos()
                 case 4:
-                    for h, t in parking.items():
-                        print(h, ".- ", t)
+                    muestrAutos()
                 case 5:
                     print("Saliendo")
                     break
