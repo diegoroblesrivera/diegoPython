@@ -4,9 +4,9 @@ def saludo():
     print("Hola Vicente")
 # saludo()
 
-name="Monica"
 
-def chao():
+
+def chao(name):
     print("Hola", name)
 
 # chao()
@@ -21,3 +21,5 @@ def resta():
     print(f"El resultado es {n1-n2}")
 
 suma()
+
+chao("Tulio")
