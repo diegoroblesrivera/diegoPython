@@ -9,11 +9,14 @@ pacientes=[
      "temperatura":35.6, "grave": False}# 2
 ]
 
-listadeNombres=[]
-for ln in pacientes:
-    listadeNombres.append(ln["nombre"])
-print(listadeNombres)
-# validad el estado de todos los pacientes ingresados
+
+
+
+# listadeNombres=[]
+# for ln in pacientes:
+#     listadeNombres.append(ln["nombre"])
+# print(listadeNombres)
+# # validad el estado de todos los pacientes ingresados
 
 
 
@@ -22,9 +25,9 @@ def validarEstados(pacientesHospital):
         p["grave"]=validarEstado(p["temperatura"])
 
 
-listado=[4,6,{"pokemon":"Eevee"},67,6]
-#        0 1    2                3  4
-print(listado[2]["pokemon"])
+listado=[4,6,{"pokemon":"Eevee", "nl":88},67,"mamamdo"]
+#        0 1    2                3   4
+print(listado[2]["nl"])
 
 print(pacientes[1]["nombre"])
 '''crear al gestor de pacientes en un centro medico
@@ -128,11 +131,11 @@ def menuPacientes():
 
 # menuPacientes()
 
-mostrarPacientes()
+# mostrarPacientes()
 
-pacientes[1]["temperatura"]=39.6
-pacientes[3]["temperatura"]=36.4
-input("Cambios de temperatura")
-validarEstados(pacientes)
-input("Actualizacion de estado de cada paciente")
-mostrarPacientes()
+# pacientes[1]["temperatura"]=39.6
+# pacientes[3]["temperatura"]=36.4
+# input("Cambios de temperatura")
+# validarEstados(pacientes)
+# input("Actualizacion de estado de cada paciente")
+# mostrarPacientes()
