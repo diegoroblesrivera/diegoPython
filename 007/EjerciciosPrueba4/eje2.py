@@ -9,7 +9,7 @@ pacientes=[
      "temperatura":35.6, "grave": False}# 2
 ]
 
-
+print(pacientes[2]["prevision"])
 
 
 # listadeNombres=[]
@@ -40,7 +40,7 @@ Crear una funcion que valide si esta grave o no
 Para que este grave debe tener mas de 39°
 Cada atencion vale $25.000
 Los despcuentos corresponden a 
-FOnasa 54%
+Fonasa 54%
 Isapre 27%
 Fodesa 12,5%
 
@@ -97,7 +97,7 @@ def cobrarAtencion():
         total = 25000 * 0.875
     else:
         print("Prevision invalida")
-    print(f"El total a pagar es: {total}")
+    return total
     
 
 def menuPacientes():
@@ -118,7 +118,7 @@ def menuPacientes():
                 case 3:
                     tomarTemp()
                 case 4:
-                    cobrarAtencion()
+                    print(f"El total a pagar es: {cobrarAtencion()}")
                 case 5:
                     mostrarPacientes()
                 case 9:
