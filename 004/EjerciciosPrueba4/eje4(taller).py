@@ -36,14 +36,29 @@ def verificarNumero():
                 return num
         except Exception as e:
             print("Solo numero enteros positivos")
-
+# Poner una propiedad mas en cada pintura
+# el nuevo key es cantidad
+# al ingresar una pintura nueva , la cantidad es 0
+# 
+# Crear una funcion para validad la contidad de pinturas
+# Revisas la cantidad de toda la coleccion
+# si la cantidad es menor a 20 mostrara "Stock Critico"
+# y le agregará 15 unidades
+# en caso contrario, mostrará "Stock razonable" 
 
 pinturas=[
-    {"color": "verde", "capacidad": 1500, "formato": "tarro"}, #0
-    {"color": "azul", "capacidad": 1500, "formato": "tarro"}, #1
-    {"color": "blanco", "capacidad": 3500, "formato": "tinaja"}, #2
-    {"color": "purpura", "capacidad": 500, "formato": "bolsa"}, #3
+    {"color": "verde", "capacidad": 1500, "formato": "tarro"  , "cantidad": 76 }, #0
+    {"color": "azul", "capacidad": 1500, "formato": "tarro"   , "cantidad": 15 }, #1
+    {"color": "blanco", "capacidad": 3500, "formato": "tinaja", "cantidad": 12 }, #2
+    {"color": "purpura", "capacidad": 500, "formato": "bolsa" , "cantidad": 22 }, #3
 ]
+def validaStock(pintas):
+    for p in pintas:
+        if p["cantidad"]<20:
+            print(f"La pintura de color {p["color"]} esta es estado critico")
+            p["cantidad"]=p["cantidad"]+15
+        else:
+            print("Stock Razonable")
 
 def mostrarPinturas():
     if len(pinturas)<1:
@@ -61,7 +76,7 @@ def agregarPintura():
     color=input("Que color será?: ")
     capacidad=int(input("Que capacidad será?: "))
     formato=input("Que formato será?: ")
-    pinturas.append({"color": color, "capacidad":capacidad, "formato": formato})
+    pinturas.append({"color": color, "capacidad":capacidad, "formato": formato, "cantidad": 0})
 def actualizarPintura():
     mostrarPinturas()
     ele=int(input("Que pintura va a actulizar?: "))
@@ -95,6 +110,7 @@ def menuPinturas():
             print("3.- Actualizar Pintura")
             print("4.- Mostrar Pinturas")
             print("5.- Mostrar mayor capacidad")
+            print("6.- Validar Stock")
             print("9.- Salir")
             op=int(input("Seleccione una opcion: "))
             match op:
@@ -108,6 +124,8 @@ def menuPinturas():
                     mostrarPinturas()  
                 case 5:
                     print(f"El recipiente con mayor capacidad tine : {mayorCap(pinturas)}")           
+                case 6:
+                    validaStock(pinturas)
                 case 9:
                     print("Saliendo...")
                     break
