@@ -44,26 +44,34 @@ pinturas=[
     {"color": "blanco", "capacidad": 3500, "formato": "tinaja"}, #2
     {"color": "purpura", "capacidad": 500, "formato": "bolsa"}, #3
 ]
+nombres=["Batman", "Robin", "Dos Caras", "Joker"]
 
-def mostrarPinturas():
-    if len(pinturas)<1:
-        print("no hay pinturas para mostrar")
+apellidos=["Jara", "Kast", "Pinochet", "Allende"]
+
+def mostrarLista(lista):
+    if len(lista)<1:
+        print("no hay elementos para mostrar")
     else:
         c=1
-        for p in pinturas:
+        for p in lista:
             print(f"{c}.- {p}")
             c+=1
-def quitarPintura():
-    mostrarPinturas()
-    ele=int(input("Que pintura va a eliminar?: "))
-    pinturas.pop(ele-1)
+
+mostrarLista(nombres)
+
+
+def quitarPintura(lista, quita):
+    for j in lista:
+        if quita==j["color"]:
+            lista.remove(j)
+
 def agregarPintura():
     color=input("Que color será?: ")
     capacidad=int(input("Que capacidad será?: "))
     formato=input("Que formato será?: ")
     pinturas.append({"color": color, "capacidad":capacidad, "formato": formato})
 def actualizarPintura():
-    mostrarPinturas()
+    mostrarLista(pinturas)
     ele=int(input("Que pintura va a actulizar?: "))
     print("1.- Color")
     print("2.- Capacidad")
@@ -86,17 +94,20 @@ def mayorCap(lista):
     for p in lista:
         listaCapacidad.append(p["capacidad"])
     return max(listaCapacidad)
+
+def menu():
+    print("-"*60)
+    print("1.- Agregar Pintura")
+    print("2.- Quitar Pintura")
+    print("3.- Actualizar Pintura")
+    print("4.- Mostrar Pinturas")
+    print("5.- Mostrar mayor capacidad")
+    print("9.- Salir")
 def menuPinturas():    
     while True:
         try:
-            print("-"*60)
-            print("1.- Agregar Pintura")
-            print("2.- Quitar Pintura")
-            print("3.- Actualizar Pintura")
-            print("4.- Mostrar Pinturas")
-            print("5.- Mostrar mayor capacidad")
-            print("9.- Salir")
-            op=int(input("Seleccione una opcion: "))
+            menu()
+            op=verificarNumero()
             match op:
                 case 1:
                     agregarPintura()
@@ -105,7 +116,7 @@ def menuPinturas():
                 case 3:
                     actualizarPintura()
                 case 4:
-                    mostrarPinturas()  
+                    mostrarLista(pinturas)  
                 case 5:
                     print(f"El recipiente con mayor capacidad tine : {mayorCap(pinturas)}")           
                 case 9:
@@ -116,7 +127,7 @@ def menuPinturas():
         except Exception as e:
             print("error: ", e)
     
-menuPinturas()
+# menuPinturas()
 
 
 
